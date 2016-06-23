@@ -32,7 +32,7 @@ submission_path = "./"
 # Compile:
 sys.stdout.write("Compiling... ")
 try:
-    run(["g++", "-std=c++11", submission_path + task_name + ".cpp"], check=True)
+    run(["g++", "-O2", "-std=c++0x", submission_path + task_name + ".cpp"], check=True)
 except SubprocessError:
     print("Failed to compile.")
     sys.exit()
