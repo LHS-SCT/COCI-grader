@@ -13,17 +13,17 @@ First set up a base directory that will contain your code submissions for this c
 Note that the base directory for each contest can contain whatever additional files you want, as long as it has the sumbission file (you can even work on your code here). The grader script only makes edits to files in the grader directory.
 
 ## Usage
-Call this function from the grader directory:
+Call this from the grader directory:
 ```
-python3 coci_grader.py [task name] [time limit]
+$ python3 coci_grader.py [task name] [time limit]
 ```
 or call from the base directory:
 ```
-python3 grader/coci_grader.py [task name] [time limit]
+$ python3 grader/coci_grader.py [task name] [time limit]
 ```
 For example:
 ```
-python3 coci_grader.py vudu 1
+$ python3 coci_grader.py vudu 1
 ```
 submits task vudu with a time limit of 1 second.
 
