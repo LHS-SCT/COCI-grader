@@ -3,7 +3,7 @@
 import sys
 import os.path
 import filecmp
-from subprocess import call, run, TimeoutExpired, SubprocessError
+from subprocess import call, run, TimeoutExpired, SubprocessError, DEVNULL, PIPE
 from shutil import copyfile
 
 # Colors:
@@ -59,7 +59,7 @@ while (os.path.isfile(input_file_prefix + str(step))):
     copyfile(input_file_prefix + str(step), submission_path + task_name + ".in")
     found_result = False
     try:
-        run([submission_path + "a.out"], timeout=time_limit, check=True)
+        run([submission_path + "a.out"], timeout=time_limit, check=True, stdout=PIPE)
     except TimeoutExpired:
         results.append(["t"])
         found_result = True

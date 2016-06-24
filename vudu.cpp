@@ -22,6 +22,7 @@ int main()
   else
     fout << bruteForceNumSeqs(prefixes, cutoff, 0, nums.size() - 1) << endl;
   fout.close();
+  cout << "hi" << endl;
   return 0;
 }
 
