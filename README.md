@@ -10,7 +10,7 @@ First set up a base directory that will contain your code submissions for this c
   * The python grader file (coci_grader.py)
   * directory which is a direct download of the contest's test data, but it should be called testdata.
 
-Note that the base directory for each contest can contain whatever additional files you want, as long as it has the sumbission file (you can even work on your code here). The grader script only makes edits to files in the grader directory.
+Note that the base directory for each contest can contain whatever additional files you want, as long as it has the sumbission file (you can even work on your code here). The grader script only makes edits to files in the grader directory. You should never have to edit the grader directory once you set it up with coci_grader.py and the test data.
 
 ## Usage
 Call this from the grader directory:
