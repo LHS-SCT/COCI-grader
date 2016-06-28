@@ -30,6 +30,9 @@ task_name = sys.argv[1]
 if not os.path.isdir(test_data_path + task_name):
     print("Invalid arguments. The arguments should be: [task name] [time limit]")
     sys.exit()
+if not os.path.isfile(submission_path + task_name + ".cpp"):
+    print("Submission file not found.")
+    sys.exit()
 try:
     time_limit = float(sys.argv[2])
 except ValueError:
