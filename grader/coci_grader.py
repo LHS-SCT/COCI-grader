@@ -3,6 +3,7 @@
 import sys
 import os
 import filecmp
+import string
 from subprocess import call, run, TimeoutExpired, SubprocessError, DEVNULL, PIPE
 from shutil import copyfile
 
@@ -50,29 +51,37 @@ print("done")
 step = 1
 input_file_prefix = test_data_path + task_name + "/" + task_name + ".in."
 output_file_prefix = test_data_path + task_name + "/" + task_name + ".out."
+suffixes = [''] + list('abcdefghijklmnopqrstuvwxyz')
+si = 0 # suffix index
 results = []
-while (os.path.isfile(input_file_prefix + str(step))):
-    copyfile(input_file_prefix + str(step), task_name + ".in")
-    found_result = False
-    try:
-        run(["./a.out"], timeout=time_limit, check=True, stdout=PIPE)
-    except TimeoutExpired:
-        results.append(["t"])
-        found_result = True
-    except SubprocessError:
-        results.append(["!"])
-        found_result = True
-    if not found_result:
-        with open(task_name + ".out", 'r') as content_file1:
-            content1 = content_file1.read().replace("\r\n", "\n")
-        with open(output_file_prefix + str(step), 'r') as content_file2:
-            content2 = content_file2.read().replace("\r\n", "\n")
-        if content1 == content2:
-            results.append(["*"])
+while (os.path.isfile(input_file_prefix + str(step)) or os.path.isfile(input_file_prefix + str(step) + 'a')):
+    results.append(["*"])
+    for suffix in suffixes:
+        if os.path.isfile(input_file_prefix + str(step) + suffix) == False:
+            continue
+        copyfile(input_file_prefix + str(step) + suffix, task_name + ".in")
+        found_result = False
+        try:
+            run(["./a.out"], timeout=time_limit, check=True, stdout=PIPE)
+        except TimeoutExpired:
+            results[-1] = ["t"]
             found_result = True
-        else:
-            results.append(["x"])
+            break
+        except SubprocessError:
+            results[-1] = ["!"]
             found_result = True
+            break
+        if not found_result:
+            with open(task_name + ".out", 'r') as content_file1:
+                content1 = content_file1.read().replace("\r\n", "\n")
+            with open(output_file_prefix + str(step) + suffix, 'r') as content_file2:
+                content2 = content_file2.read().replace("\r\n", "\n")
+            if content1 == content2:
+                found_result = True
+            else:
+                results[-1] = ["x"]
+                found_result = True
+                break
     print((green if results[-1][0] == "*" else red) + str(step) + ". " + results[-1][0] + reset)
     step += 1
 
