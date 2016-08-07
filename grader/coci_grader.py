@@ -10,7 +10,7 @@ from shutil import copyfile
 # Colors
 green = '\033[92m'
 red = '\033[91m'
-reset = '\033[30m'
+reset = '\033[0m'
 
 # Paths
 submission_path = "./../"
