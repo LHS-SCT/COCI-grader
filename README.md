@@ -16,9 +16,9 @@ Note that the base directory for each contest can contain whatever additional fi
 
 ## Usage
 
-> ### MacOS
+### MacOS
 
-> Call this from the grader directory:
+ Call this from the grader directory:
 ```
 $ python3 coci_grader.py [task name] [time limit]
 ```
@@ -32,11 +32,11 @@ $ python3 coci_grader.py vudu 1
 ```
 submits task "VUDU" with a time limit of 1 second.
 
-===
+---
 
-> ### Windows
+### Windows
 
-> Call this from the grader directory:
+Call this from the grader directory:
 ```
 $ py -3 coci_win.py [task name] [time limit]
 ```
