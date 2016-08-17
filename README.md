@@ -6,6 +6,8 @@ Example files from task "VUDU" ('15 - '16 Contest #2) included to display usage.
 First set up a base directory that will contain your code submissions for the contest (each contest needs its own base directory). This base directory should contain:
 
 * Your .cpp code submissions (in the form `taskname.cpp`, all lowercase)
+    * Should input from `taskname.in`
+    * Should output to `taskname.out`
 * A *grader* directory that contains:
     * Directory which is a direct download of the contest's test data, but renamed *testdata*
     * Depending on your OS:
