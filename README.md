@@ -34,7 +34,7 @@ $ python3 coci_grader.py vudu 1
 ```
 submits task "VUDU" with a time limit of 1 second.
 
----
+===
 
 ### Windows
 
