@@ -89,6 +89,6 @@ while (os.path.isfile(input_file_prefix + str(step)) or os.path.isfile(input_fil
                 results[-1] = ["x"]
                 found_result = True
                 break
-    print((green if results[-1][0] == "*" else red) + str(step) + ". " + results[-1][0] + reset)
+    print(str(step) + ". " + results[-1][0])
     step += 1
 
