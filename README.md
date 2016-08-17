@@ -8,19 +8,19 @@ First set up a base directory that will contain your code submissions for the co
 * Your .cpp code submissions (in the form `taskname.cpp`, all lowercase)
     * Should input from `taskname.in`
     * Should output to `taskname.out`
-* A *grader* directory that contains:
-    * Directory which is a direct download of the contest's test data, but renamed *testdata*
+* A directory named `grader` that contains:
+    * Directory which is a direct download of the contest's test data, but renamed `testdata`
     * Depending on your OS:
         * Include the python grader file `coci_grader.py` if on MacOS
         * Include the python grader file `coci_win.py` if on Windows
 
-Note that the base directory for each contest can contain whatever additional files you want, as long as it has the sumbission file. The grader script only makes edits to files in the grader directory. You should never have to edit the grader directory once you set it up with either `coci_grader.py` or `coci_win.py` and the *testdata* directory.
+Note that the base directory for each contest can contain whatever additional files you want, as long as it has the sumbission file. The grader script only makes edits to files in the grader directory. You should never have to edit the grader directory once you set it up with either `coci_grader.py` or `coci_win.py` and the `testdata` directory.
 
 ## Usage
 
 ### MacOS
 
- Call this from the grader directory:
+ Call this from the `grader` directory:
 ```
 $ python3 coci_grader.py [task name] [time limit]
 ```
@@ -38,7 +38,7 @@ submits task "VUDU" with a time limit of 1 second.
 
 ### Windows
 
-Call this from the grader directory:
+Call this from the `grader` directory:
 ```
 $ py -3 coci_win.py [task name] [time limit]
 ```
