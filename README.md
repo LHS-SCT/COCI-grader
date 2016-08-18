@@ -32,7 +32,7 @@ For example:
 ```
 $ python3 coci_grader.py vudu 1
 ```
-submits task "VUDU" with a time limit of 1 second.
+submits task **VUDU** with a time limit of 1 second.
 
 ===
 
@@ -50,7 +50,7 @@ For example:
 ```
 $ py -3 coci_win.py vudu 1
 ```
-submits task "VUDU" with a time limit of 1 second.
+submits task **VUDU** with a time limit of 1 second.
 
 ## Other
 
